@@ -227,7 +227,6 @@ nav ul.nav-list li a:hover {
     text-decoration: underline;
 }
 
-/* Certifications Section Styling */
 .certs-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -334,7 +333,6 @@ footer {
     color: white;
 }
 
-/* Responsive Media Queries for Mobile View */
 @media (max-width: 768px) {
     header {
         padding: 15px 5%;
