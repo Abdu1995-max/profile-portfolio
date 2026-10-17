@@ -1,11 +1,31 @@
 console.log("Welcome to Abdu Aragaw's Portfolio!");
 
-document.querySelectorAll('nav a').forEach(anchor => {
+// Mobile menu toggle
+const mobileMenu = document.getElementById('mobile-menu');
+const navList = document.querySelector('nav ul.nav-list');
+
+if (mobileMenu) {
+    mobileMenu.addEventListener('click', () => {
+        navList.classList.toggle('active');
+    });
+}
+
+// Close mobile menu on link click
+document.querySelectorAll('nav ul.nav-list a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
-        document.querySelector(targetId).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const targetSection = document.querySelector(targetId);
+        
+        if (targetSection) {
+            targetSection.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        
+        if (navList.classList.contains('active')) {
+            navList.classList.remove('active');
+        }
     });
 });
+
